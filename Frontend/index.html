@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Implementacion de pago plux -->
+    <script src=" https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    
+    <script src="https://sandbox-paybox.pagoplux.com/paybox/index.js"></script> 
+    <!-- <script src="https://paybox.pagoplux.com/paybox/index.js"></script> Producion --> 
+     <script type="text/javascript">
+        var data = {
+            PayboxRemail: "da.nielrolesppx@gmail.com",
+            PayboxSendmail: "correocliente@gmail.com",
+            PayboxRename: "PagoPlux Test",
+            PayboxSendname: "Nombre tarjetahabiente",
+            PayboxBase0: "2.0",
+            PayboxBase12: "10.0",
+            PayboxDescription: "Compra celular",
+            PayboxLanguage: "es",
+            PayboxDirection: "calle49b#3e-65",
+            PayBoxClientPhone: "3003244566",
+            PayboxProduction: false,
+            PayboxRecurrent: false,
+            PayboxIdPlan: '171',
+            PayboxPermitirCalendarizar: false,
+            PayboxPagoInmediato: true,
+            PayboxCobroPrueba: false,
+            PayBoxClientIdentification: '0992664673001',
+            // PayboxAmountVariablePlan: true,
+            // PayboxFrequencyPlan: 'MEN',
+            PayboxTieneIvaPlan: true,
+            PayboxDescriptionPlan: 'Intento de compra de un celular gama alta',
+            PayboxEnvironment: 'sandbox',
+            PayboxPagoPlux: false,
+        };
+    </script> 
+    <script type="text/javascript">
+      var onAuthorize = function(response)
+      {
+      // La variable response posee un Objeto con la respuesta de PagoPlux.
+      if (response.status == 'succeeded'){
+      console.log('Compramos')
+      console.log( response )
+      console.log( response.clientName )
+      }
+      };
+    </script> 
+    <!--Fin de sccript  -->
+   <link rel="icon" type="image/svg+xml" href="" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>PagoPlux</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
